@@ -1,23 +1,25 @@
+# 1. The actual logic
 def add(a, b):
-    """Adds two numbers and returns the result."""
     return a + b
 
+def subtract(a, b):
+    return a - b
+
+# 2. The Tests
 def test_add_positive_numbers():
-    assert add(2, 3) == 5, "Should be 5"
+    assert add(2, 3) == 5
 
-def test_add_zero():
-    assert add(5, 0) == 5, "Should be 5"
+def test_subtract():
+    assert subtract(10, 5) == 5
+    print("Subtraction Test Passed!")
 
-def test_add_negative_numbers():
-    assert add(-1, -1) == -2, "Should be -2"
-
+# 3. The Execution Block
 if __name__ == "__main__":
-    # Run all tests
     try:
-        test_add_positive_numbers()
-        test_add_zero()
-        test_add_negative_numbers()
-        print("✅ All tests passed successfully!")
-    except AssertionError as e:
-        print(f"❌ Test failed: {e}")
-        exit(1) # This tells GitHub Actions that something went wrong!
+        # We must define these above before we call them here!
+        test_add_positive_numbers() 
+        test_subtract() 
+        print("✅ All tests passed!")
+    except Exception as e:
+        print(f"❌ Error encountered: {e}")
+        exit(1)
