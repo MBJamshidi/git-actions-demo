@@ -23,3 +23,6 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"❌ Error encountered: {e}")
         exit(1)
+
+def multiply(a, b):
+    return a * b
